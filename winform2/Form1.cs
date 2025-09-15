@@ -18,7 +18,6 @@ namespace winform2
         }
         private void b1_Click(object sender, EventArgs e)
         {
-            // Lấy dữ liệu từ các control
             string hoten = txthoten.Text;
             string gioitinh = rb1.Checked ? "Nam" : rb2.Checked ? "Nữ" : "Chưa chọn";
             string ngaysinh = dtp1.Value.ToString("dd/MM/yyyy");
@@ -26,8 +25,6 @@ namespace winform2
             if (ck1.Checked) soThich.Add(ck1.Text);
             if (ck2.Checked) soThich.Add(ck2.Text);
             if (ck3.Checked) soThich.Add(ck3.Text);
-
-            // Hiển thị thông tin
             string message = $"Họ tên: {hoten}, Giới tính: {gioitinh}, Ngày sinh: {ngaysinh}, Sở thích: {string.Join(", ", soThich)}";
             MessageBox.Show(message, "Thông tin đã nhập", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
