@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,13 +20,13 @@ namespace winform2
         {
             string hoten = txthoten.Text;
             string gioitinh = rb1.Checked ? "Nam" : rb2.Checked ? "Nữ" : "Chưa chọn";
-            string ngaysinh = dtp1.Value.ToString("dd/MM/yyyy");
+            string ngaysinh = dtp1.Value.ToString("dd/MM/yyyy hh:mm:ss tt", new System.Globalization.CultureInfo("en-US"));
             List<string> soThich = new List<string>();
             if (ck1.Checked) soThich.Add(ck1.Text);
             if (ck2.Checked) soThich.Add(ck2.Text);
             if (ck3.Checked) soThich.Add(ck3.Text);
             string message = $"Họ tên: {hoten}, Giới tính: {gioitinh}, Ngày sinh: {ngaysinh}, Sở thích: {string.Join(", ", soThich)}";
-            MessageBox.Show(message, "Thông tin đã nhập", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(message, "Thông tin người dùng", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
